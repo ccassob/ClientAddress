@@ -1,0 +1,3 @@
+Debe tener .net 5.
+Comando para correr la base de datos. Update-Database
+Modificar connectionString si es necesario.

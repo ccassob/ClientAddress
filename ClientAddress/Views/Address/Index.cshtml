@@ -1,0 +1,37 @@
+﻿@model ClientAddress.Models.AddressViewModel
+
+@{
+    ViewData["Title"] = "Address";
+}
+
+<h1>Direcciones</h1>
+
+<p>
+    @Html.ActionLink("Nueva dirección", "Create", "Address", new { id = Model.ClientId })
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Descripción
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Elements)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@Html.ActionLink("Volver a los clientes", "Index", "Client")
